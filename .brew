@@ -1,35 +1,45 @@
 #!/bin/bash
 
 # Make sure we’re using the latest Homebrew
-brew update
+brew upgrade
 
 # Upgrade any already-installed formulae
 brew update
 
 brew install ack
-brew install bash
-brew install coreutils
-brew install findutils
+brew install archey
+brew install caskroom/cask/brew-cask
 brew install ffmpeg
-brew install gdal
+brew install gdal --with-postgres
 brew install giflib
-brew install gifsicle
 brew install git
-brew install go
-brew install htop-osx
-brew install macvim
-brew install mercurial
+brew install grep
+brew install imagemagick
+brew install lame
+brew install libpng
+brew install mpg123
+brew install postgis
+brew install postgresql
 brew install node
-brew install openssl
-brew install pstree
-brew install python
-brew install python3
 brew install rbenv
 brew install ruby-build
 brew install sqlite
-brew install tmux
-brew install valgrind
-brew install wget --enable-iri
-brew install youtube-dl
+brew install tig
+
+brew tap caskroom/cask-versions
+
+# install all the things
+brew cask install google-chrome
+brew cask install firefox
+brew cask install sublime-text-3
+brew cask install alfred
+brew cask install iterm2-beta
+brew cask install reeder
+brew cask install dropbox
+brew cask install rdio
+brew cask install airmail-beta
+brew cask install hipchat
+brew cask install spectacle
+brew cask install virtualbox
 
 brew cleanup

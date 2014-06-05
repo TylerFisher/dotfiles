@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo easy_install pip==1.4.1
+
+sudo pip install virtualenv virtualenvwrapper
+sudo pip install numpy

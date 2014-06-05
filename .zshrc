@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=/Users/geraldrich/.oh-my-zsh
+ZSH=/Users/tylerfisher/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -37,7 +37,7 @@ ZSH_THEME="robbyrussell"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to the command execution time stamp shown 
+# Uncomment following line if you want to the command execution time stamp shown
 # in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
@@ -45,47 +45,21 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew colorize rails ruby git tmux zsh_reload)
+plugins=(git colorize virtualenv virtualenvwrapper brew pip)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bin/tmuxinator.zsh
 export DISABLE_AUTO_TITLE=true
 # User configuration
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export PATH=/usr/local/bin:/Users/tylerfisher/bin:$PATH
+export PATH=/usr/local/lib/python2.7/site-packages:$PATH
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future"
 
 export PATH=/usr/local/bin:$PATH
 source /usr/local/bin/virtualenvwrapper_lazy.sh
-export GOPATH=$HOME/Code/go
-export EDITOR='vim'
-function powerline_precmd() {
-  export PS1="$(~/powerline-shell.py $? --shell zsh 2> /dev/null)"
-}
-
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
-
-install_powerline_precmd
+export EDITOR='subl'
 
 for file in ~/.{secrets,exports,aliases,functions}; do
         [ -r "$file" ] && source "$file"
@@ -94,7 +68,7 @@ unset file
 
 export CSICOLOR=1
 export CLICOLOR=1
-export LSCOLORS=gxFxGxDxBxegedabagacad
+export LSCOLORS=Exfxcxdxbxegedabagacad
 
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 eval "$(rbenv init -)"

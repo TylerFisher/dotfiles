@@ -31,8 +31,6 @@ fi
 # `cat` with beautiful colors. requires Pygments installed.
 alias c='pygmentize -O style=monokai -f console256 -g'
 
-alias mvi="mvim -vf"
-
 # brew
 alias refill="brew update && brew upgrade"
 alias rx="brew doctor"
@@ -53,11 +51,10 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 
 # current projects
 alias code="cd ~/Code"
-alias pp="cd ~/Code/propublica"
 
 # GIT STUFF
 # Reset previous commit but keep all changes
-alias damnit="git reset --soft HEAD^"
+alias goddammit="git reset --soft HEAD^"
 # fuck it all
 alias fuckit="git reset --hard HEAD"
 # sup brah?
@@ -83,5 +80,5 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 # File size
 alias fs="stat -f \"%z bytes\""
 
-alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume 10'"
+# python server
+alias serve="python -m SimpleHTTPServer"

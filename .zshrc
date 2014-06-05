@@ -53,13 +53,10 @@ export DISABLE_AUTO_TITLE=true
 
 export PATH=/usr/local/bin:/Users/tylerfisher/bin:$PATH
 export PATH=/usr/local/lib/python2.7/site-packages:$PATH
+export NODE_PATH=/usr/local/lib/node_modules
 
 # Compilation flags
 export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future"
-
-export PATH=/usr/local/bin:$PATH
-source /usr/local/bin/virtualenvwrapper_lazy.sh
-export EDITOR='subl'
 
 for file in ~/.{secrets,exports,aliases,functions}; do
         [ -r "$file" ] && source "$file"
@@ -70,5 +67,8 @@ export CSICOLOR=1
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
+# woo python
 source /usr/local/bin/virtualenvwrapper_lazy.sh
+
+# boo ruby
 eval "$(rbenv init -)"
